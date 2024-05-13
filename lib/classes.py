@@ -38,9 +38,9 @@ class Clasificador:
         elif(model == "gbm"):
             self.clf = lgb.LGBMClassifier()
                 
-    def train(self, xTrain, yTrain, X_validate, y_validate, epochs = 50):
+    def train(self, xTrain, yTrain, epochs = 50):
         if(self.model == "mlp"):
-            self.clf.fit(xTrain, yTrain, epochs = epochs, batch_size=16, validation_data=(X_validate, y_validate))
+            self.clf.fit(xTrain, yTrain, epochs = epochs, batch_size=16)
         else:
             self.clf.fit(xTrain, yTrain)
    
